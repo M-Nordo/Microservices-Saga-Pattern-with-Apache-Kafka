@@ -20,13 +20,11 @@ public class StockController {
 
     private final StockRepository stockRepository;
 
-    // Mevcut stokları görmek için
     @GetMapping
     public List<Stock> getAllStocks() {
         return stockRepository.findAll();
     }
 
-    // Manuel stok eklemek veya güncellemek için (Test kolaylığı sağlar)
     @PostMapping
     public Stock updateStock(@RequestBody Stock stock) {
         return stockRepository.save(stock);
